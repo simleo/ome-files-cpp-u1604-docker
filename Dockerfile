@@ -23,6 +23,7 @@ RUN cmake \
     -Dbuild-prerequisites=OFF \
     -Dome-superbuild_BUILD_gtest=ON \
     -Dbuild-packages=ome-files \
+    -DCMAKE_BUILD_TYPE=Release \
     /git/ome-cmake-superbuild
 RUN make
 RUN make install
