@@ -12,6 +12,7 @@ RUN apt-get update && apt-get -y install \
   libgtest-dev \
   libtiff5-dev \
   python-pip
+RUN pip install --upgrade pip
 RUN pip install Genshi
 
 WORKDIR /git
