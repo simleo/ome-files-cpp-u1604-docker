@@ -16,10 +16,14 @@ RUN pip install --upgrade pip
 RUN pip install Genshi
 
 WORKDIR /git
-RUN git clone --branch='v0.2.3' https://github.com/ome/ome-cmake-superbuild.git
+RUN git clone --branch='master' https://github.com/ome/ome-cmake-superbuild.git
+RUN git clone --branch='master' https://github.com/ome/ome-common-cpp.git
+RUN git clone --branch='master' https://github.com/ome/ome-files-cpp.git
+RUN git clone --branch='master' https://github.com/ome/ome-model.git
 
 WORKDIR /build
 RUN cmake \
+    -DCMAKE_CXX_STANDARD=11 \
     -Dgit-dir=/git \
     -Dbuild-prerequisites=OFF \
     -Dome-superbuild_BUILD_gtest=ON \
@@ -29,4 +33,3 @@ RUN cmake \
 RUN make
 RUN make install
 RUN ldconfig
-
