@@ -17,9 +17,6 @@ RUN pip install Genshi
 
 WORKDIR /git
 RUN git clone --branch='master' https://github.com/ome/ome-cmake-superbuild.git
-RUN git clone --branch='master' https://github.com/ome/ome-common-cpp.git
-RUN git clone --branch='master' https://github.com/ome/ome-files-cpp.git
-RUN git clone --branch='master' https://github.com/ome/ome-model.git
 
 WORKDIR /build
 RUN cmake \
