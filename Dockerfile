@@ -16,7 +16,7 @@ RUN pip install --upgrade pip
 RUN pip install Genshi
 
 WORKDIR /git
-RUN git clone --branch='master' https://github.com/ome/ome-cmake-superbuild.git
+RUN git clone --branch='v0.3.0' https://github.com/ome/ome-cmake-superbuild.git
 
 WORKDIR /build
 RUN cmake \
