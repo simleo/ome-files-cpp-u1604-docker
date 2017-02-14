@@ -5,6 +5,7 @@ RUN apt-get update && apt-get -y install \
   build-essential \
   cmake \
   git \
+  man \
   libboost-all-dev \
   libxerces-c-dev \
   libxalan-c-dev \
@@ -14,6 +15,7 @@ RUN apt-get update && apt-get -y install \
   python-pip
 RUN pip install --upgrade pip
 RUN pip install Genshi
+RUN pip install Sphinx
 
 WORKDIR /git
 RUN git clone --branch='v0.3.0' https://github.com/ome/ome-cmake-superbuild.git
