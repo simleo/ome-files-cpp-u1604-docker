@@ -18,7 +18,7 @@ RUN pip install Genshi
 RUN pip install Sphinx
 
 WORKDIR /git
-RUN git clone --branch='v0.3.1' https://github.com/ome/ome-cmake-superbuild.git
+RUN git clone --branch='v0.3.2' https://github.com/ome/ome-cmake-superbuild.git
 
 WORKDIR /build
 RUN cmake \
