@@ -18,11 +18,14 @@ RUN pip install Genshi
 RUN pip install Sphinx
 
 WORKDIR /git
+RUN git clone --branch='v5.4.1' https://github.com/ome/ome-common-cpp.git
+RUN git clone --branch='v5.5.3' https://github.com/ome/ome-model.git
+RUN git clone --branch='master' https://github.com/ome/ome-files-cpp.git
+RUN git clone --branch='v5.4.1' https://github.com/ome/ome-qtwidgets.git
 RUN git clone --branch='v0.3.2' https://github.com/ome/ome-cmake-superbuild.git
 
 WORKDIR /build
 RUN cmake \
-    -DCMAKE_CXX_STANDARD=11 \
     -Dgit-dir=/git \
     -Dbuild-prerequisites=OFF \
     -Dome-superbuild_BUILD_gtest=ON \
