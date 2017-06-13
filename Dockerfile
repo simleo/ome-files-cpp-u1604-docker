@@ -12,7 +12,14 @@ RUN apt-get update && apt-get -y install \
   libpng-dev \
   libgtest-dev \
   libtiff5-dev \
-  python-pip
+  locales \
+  python-pip \
+  && locale-gen en_US.UTF-8
+
+ENV LC_ALL=en_US.UTF-8 \
+    LANG=en_US.UTF-8 \
+    TERM=xterm
+
 RUN pip install --upgrade pip
 RUN pip install Genshi
 RUN pip install Sphinx
