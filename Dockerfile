@@ -16,9 +16,8 @@ RUN apt-get update && apt-get -y install \
   python-pip \
   && locale-gen en_US.UTF-8
 
-ENV LC_ALL=en_US.UTF-8 \
-    LANG=en_US.UTF-8 \
-    TERM=xterm
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
 
 RUN pip install --upgrade pip
 RUN pip install Genshi
